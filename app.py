@@ -92,12 +92,12 @@ with st.sidebar:
         ex_brands = st.multiselect("Exclude brands", BRANDS)
         ex_types = st.multiselect("Exclude types", list(rec.TYPE_KEYS),
                                   format_func=lambda k: rec.label(k, CONFIG))
-        if st.form_submit_button("Apply preferences", use_container_width=True):
+        if st.form_submit_button("Apply preferences"):
             prefs = rec.build_preferences(CONFIG, budget, must, pref,
                                           None if brand == "(none)" else brand, ex_brands, ex_types)
             st.session_state.messages.append({"role": "user", "content": "Applied the structured form."})
             run_and_reply(prefs)
-    st.button("🔄 Start over", on_click=reset, use_container_width=True)
+    st.button("🔄 Start over", on_click=reset)
 
     with st.expander("Scoring weights (config.json)"):
         for k, v in CONFIG["weights"].items():
@@ -106,6 +106,53 @@ with st.sidebar:
             st.caption("Effective weights after your priorities:")
             for k, v in st.session_state.result["weights"].items():
                 st.write(f"{k.replace('_', ' ')}: {v:.0%}")
+
+PRIORITY_NAMES = {
+    "battery": "Battery", "rating": "Rating", "price_value": "Price value",
+    "feature_match": "Feature match", "extra_features": "Extra features",
+}
+
+
+def pipeline_view(result):
+    """User need -> filtering funnel -> scoring weights -> result."""
+    prefs = result["prefs"]
+    st.subheader("How we got these results")
+    with st.container(border=True):
+        st.markdown("##### 1 · User need")
+        boosted = [PRIORITY_NAMES[k] for k, v in prefs["priorities"].items() if v > 1 and k in PRIORITY_NAMES]
+        excluded = list(prefs["exclude_brands"]) + [rec.label(k, CONFIG) for k in prefs["exclude_types"]]
+        need = {
+            "Budget": rec.inr(prefs["budget"]) if prefs["budget"] else "No limit",
+            "Must-have": ", ".join(rec.label(k, CONFIG) for k in prefs["must_have"]) or "None",
+            "Priority": ", ".join(boosted) or "Balanced",
+            "Excluded": ", ".join(excluded) or "None",
+        }
+        for k, v in need.items():
+            st.write(f"**{k}:** {v}")
+
+        st.markdown("⬇️")
+        st.markdown("##### 2 · Filtering")
+        funnel = result["funnel"]
+        total = max(funnel[0][1], 1)
+        for step, count in funnel:
+            st.write(f"**{count}** · {step}")
+            st.progress(count / total)
+
+        st.markdown("⬇️")
+        st.markdown("##### 3 · Scoring")
+        for k, w in sorted(result["weights"].items(), key=lambda kv: -kv[1]):
+            arrow = " ⬆️" if prefs["priorities"].get(k, 1.0) > 1 else ""
+            st.write(f"{PRIORITY_NAMES[k]}{arrow}: **{w:.0%}**")
+            st.progress(min(w, 1.0))
+
+        st.markdown("⬇️")
+        st.markdown("##### 4 · Result")
+        if result["top"]:
+            for r in result["top"]:
+                st.write(f"{MEDALS[r['rank']]} **{r['product']['name']}** — {r['score']}")
+        else:
+            st.write("No product passed every filter.")
+
 
 # ------------------------------------------------------------------- main --
 st.title("🎧 SmartPick")
@@ -120,7 +167,7 @@ if st.session_state.result is None:
     st.write("Try an example:")
     cols = st.columns(len(EXAMPLES))
     for col, ex in zip(cols, EXAMPLES):
-        col.button(ex, on_click=handle_text, args=(ex,), use_container_width=True)
+        col.button(ex, on_click=handle_text, args=(ex,))
 
 result = st.session_state.result
 if result:
@@ -164,17 +211,19 @@ if result:
         st.markdown("**Refine your search**")
         cols = st.columns(len(REFINEMENTS))
         for col, (text, cmd) in zip(cols, REFINEMENTS.items()):
-            col.button(text, on_click=handle_text, args=(cmd,), use_container_width=True)
+            col.button(text, on_click=handle_text, args=(cmd,))
 
         if st.toggle("Show side-by-side comparison card", value=True):
             st.subheader("Comparison")
-            st.dataframe(rec.comparison_table(result["top"], CONFIG), use_container_width=True)
+            st.dataframe(rec.comparison_table(result["top"], CONFIG))
             st.caption("★ = best value in that row")
+
+    pipeline_view(result)
 
     with st.expander(f"Why were {len(result['rejected'])} products filtered out?"):
         rows = [{"Product": r["name"], "Price": rec.inr(r["price"]), "Reason": r["reason"]}
                 for r in result["rejected"]]
-        st.dataframe(rows, use_container_width=True, hide_index=True)
+        st.dataframe(rows, hide_index=True)
     with st.expander("Normalized filter object"):
         st.json({k: v for k, v in result["prefs"].items() if k != "warnings"})
 
