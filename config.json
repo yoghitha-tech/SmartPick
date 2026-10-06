@@ -1,0 +1,66 @@
+{
+  "category": "headphones",
+  "top_n": 3,
+
+  "weights": {
+    "feature_match": 0.30,
+    "rating": 0.25,
+    "battery": 0.20,
+    "price_value": 0.15,
+    "extra_features": 0.10
+  },
+
+  "preference_boost": 1.5,
+  "priority_step": 2.0,
+  "priority_cap": 4.0,
+  "brand_bonus": 0.05,
+  "battery_max_hours": 60,
+  "battery_good_hours": 30,
+  "extra_features_cap": 4,
+  "budget_cut_on_cheaper": 0.85,
+  "higher_rating_floor": 4.3,
+
+  "lightweight_max_g": { "over_ear": 250, "on_ear": 150, "in_ear": 12 },
+
+  "bonus_features": [
+    "active_noise_cancellation", "microphone", "water_resistant", "foldable",
+    "fast_charging", "multipoint", "bass_boost", "low_latency", "lightweight"
+  ],
+
+  "soft_features": [
+    "lightweight", "bass_boost", "fast_charging", "multipoint", "foldable", "water_resistant"
+  ],
+
+  "feature_labels": {
+    "wireless": "wireless",
+    "active_noise_cancellation": "ANC",
+    "microphone": "mic",
+    "water_resistant": "water resistance",
+    "foldable": "foldable design",
+    "fast_charging": "fast charging",
+    "multipoint": "multipoint pairing",
+    "bass_boost": "bass boost",
+    "low_latency": "low latency",
+    "over_ear": "over-ear",
+    "on_ear": "on-ear",
+    "in_ear": "in-ear",
+    "lightweight": "lightweight",
+    "battery": "long battery life"
+  },
+
+  "feature_aliases": {
+    "wireless": ["wireless", "bluetooth", "cordless"],
+    "active_noise_cancellation": ["anc", "noise cancel", "noise-cancel", "active noise"],
+    "microphone": ["microphone", "mic", "for calls", "call quality"],
+    "water_resistant": ["water resistant", "water-resistant", "waterproof", "sweatproof", "sweat proof", "sweat resistant", "splash"],
+    "foldable": ["foldable", "folding", "collapsible"],
+    "fast_charging": ["fast charg", "quick charg", "rapid charg"],
+    "multipoint": ["multipoint", "multi-point", "multi-device", "two devices"],
+    "bass_boost": ["bass"],
+    "low_latency": ["low latency", "low-latency", "gaming"],
+    "over_ear": ["over-ear", "over ear", "circumaural"],
+    "on_ear": ["on-ear", "on ear"],
+    "in_ear": ["in-ear", "in ear", "earbuds", "earbud", "earphones", "earphone", "tws"],
+    "lightweight": ["lightweight", "light weight", "light-weight", "lighter"]
+  }
+}
