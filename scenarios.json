@@ -1,0 +1,353 @@
+[
+  {
+    "id": "S01",
+    "text": "I need wireless headphones under ₹5000 with ANC and good battery life.",
+    "budget": 5000,
+    "must_have": [
+      "wireless",
+      "active_noise_cancellation"
+    ],
+    "preferred": [
+      "battery"
+    ],
+    "brand": null,
+    "exclude_brands": [],
+    "exclude_types": [],
+    "exclude_features": [],
+    "expected_suitable": [
+      "HP-003",
+      "HP-007",
+      "HP-019",
+      "HP-030",
+      "HP-033",
+      "HP-037",
+      "HP-039",
+      "HP-044",
+      "HP-045"
+    ]
+  },
+  {
+    "id": "S02",
+    "text": "Budget 3000, wireless over-ear headphones with a mic for calls.",
+    "budget": 3000,
+    "must_have": [
+      "wireless",
+      "over_ear",
+      "microphone"
+    ],
+    "preferred": [],
+    "brand": null,
+    "exclude_brands": [],
+    "exclude_types": [],
+    "exclude_features": [],
+    "expected_suitable": [
+      "HP-006",
+      "HP-032",
+      "HP-038"
+    ]
+  },
+  {
+    "id": "S03",
+    "text": "Gym earbuds under 3500, must be wireless and water resistant, lightweight preferred.",
+    "budget": 3500,
+    "must_have": [
+      "in_ear",
+      "wireless",
+      "water_resistant"
+    ],
+    "preferred": [
+      "lightweight"
+    ],
+    "brand": null,
+    "exclude_brands": [],
+    "exclude_types": [],
+    "exclude_features": [],
+    "expected_suitable": [
+      "HP-004",
+      "HP-009",
+      "HP-014",
+      "HP-015",
+      "HP-019",
+      "HP-023"
+    ]
+  },
+  {
+    "id": "S04",
+    "text": "Gaming headphones under 4500 with a mic, not Boltbeat.",
+    "budget": 4500,
+    "must_have": [
+      "low_latency",
+      "microphone"
+    ],
+    "preferred": [],
+    "exclude_brands": [
+      "Boltbeat"
+    ],
+    "brand": null,
+    "exclude_types": [],
+    "exclude_features": [],
+    "expected_suitable": [
+      "HP-009",
+      "HP-011",
+      "HP-013",
+      "HP-014"
+    ]
+  },
+  {
+    "id": "S05",
+    "text": "Best noise cancelling headphones under ₹10000, prefer Zenwave.",
+    "budget": 10000,
+    "must_have": [
+      "active_noise_cancellation"
+    ],
+    "preferred": [],
+    "brand": "Zenwave",
+    "exclude_brands": [],
+    "exclude_types": [],
+    "exclude_features": [],
+    "expected_suitable": [
+      "HP-003",
+      "HP-007",
+      "HP-012",
+      "HP-016",
+      "HP-019",
+      "HP-022",
+      "HP-027",
+      "HP-028",
+      "HP-030",
+      "HP-033",
+      "HP-037",
+      "HP-039",
+      "HP-042",
+      "HP-044",
+      "HP-045"
+    ]
+  },
+  {
+    "id": "S06",
+    "text": "Cheap wired headphones under 1500.",
+    "budget": 1500,
+    "must_have": [],
+    "preferred": [],
+    "exclude_features": [
+      "wireless"
+    ],
+    "brand": null,
+    "exclude_brands": [],
+    "exclude_types": [],
+    "expected_suitable": [
+      "HP-008",
+      "HP-025"
+    ]
+  },
+  {
+    "id": "S07",
+    "text": "Wireless travel headphones under 4000, must be foldable and must have multipoint, lightweight is a bonus.",
+    "budget": 4000,
+    "must_have": [
+      "wireless",
+      "foldable",
+      "multipoint"
+    ],
+    "preferred": [
+      "lightweight"
+    ],
+    "brand": null,
+    "exclude_brands": [],
+    "exclude_types": [],
+    "exclude_features": [],
+    "expected_suitable": [
+      "HP-035",
+      "HP-046"
+    ]
+  },
+  {
+    "id": "S08",
+    "text": "Wireless on-ear headphones under ₹2500 with a mic.",
+    "budget": 2500,
+    "must_have": [
+      "wireless",
+      "on_ear",
+      "microphone"
+    ],
+    "preferred": [],
+    "brand": null,
+    "exclude_brands": [],
+    "exclude_types": [],
+    "exclude_features": [],
+    "expected_suitable": [
+      "HP-010",
+      "HP-021",
+      "HP-031",
+      "HP-043",
+      "HP-046"
+    ]
+  },
+  {
+    "id": "S09",
+    "text": "Under 6000, ANC, over-ear, long battery, avoid Boltbeat and BeatForge.",
+    "budget": 6000,
+    "must_have": [
+      "active_noise_cancellation",
+      "over_ear"
+    ],
+    "preferred": [
+      "battery"
+    ],
+    "exclude_brands": [
+      "Boltbeat",
+      "BeatForge"
+    ],
+    "brand": null,
+    "exclude_types": [],
+    "exclude_features": [],
+    "expected_suitable": [
+      "HP-003",
+      "HP-007",
+      "HP-022",
+      "HP-027",
+      "HP-033",
+      "HP-045"
+    ]
+  },
+  {
+    "id": "S10",
+    "text": "Wireless earbuds with ANC under 4000, prefer water resistant, prefer Echoline.",
+    "budget": 4000,
+    "must_have": [
+      "wireless",
+      "in_ear",
+      "active_noise_cancellation"
+    ],
+    "preferred": [
+      "water_resistant"
+    ],
+    "brand": "Echoline",
+    "exclude_brands": [],
+    "exclude_types": [],
+    "exclude_features": [],
+    "expected_suitable": [
+      "HP-019",
+      "HP-030",
+      "HP-037"
+    ]
+  },
+  {
+    "id": "S11",
+    "text": "I want bass heavy wireless headphones under 3000.",
+    "budget": 3000,
+    "must_have": [
+      "wireless"
+    ],
+    "preferred": [
+      "bass_boost"
+    ],
+    "brand": null,
+    "exclude_brands": [],
+    "exclude_types": [],
+    "exclude_features": [],
+    "expected_suitable": [
+      "HP-004",
+      "HP-006",
+      "HP-009",
+      "HP-010",
+      "HP-014",
+      "HP-015",
+      "HP-017",
+      "HP-020",
+      "HP-021",
+      "HP-023",
+      "HP-031",
+      "HP-032",
+      "HP-036",
+      "HP-037",
+      "HP-038",
+      "HP-043",
+      "HP-046"
+    ]
+  },
+  {
+    "id": "S12",
+    "text": "Best rated wireless ANC headphones up to ₹12000, must have multipoint and fast charging.",
+    "budget": 12000,
+    "must_have": [
+      "wireless",
+      "active_noise_cancellation",
+      "multipoint",
+      "fast_charging"
+    ],
+    "preferred": [],
+    "brand": null,
+    "exclude_brands": [],
+    "exclude_types": [],
+    "exclude_features": [],
+    "expected_suitable": [
+      "HP-001",
+      "HP-016",
+      "HP-027",
+      "HP-028",
+      "HP-042",
+      "HP-045"
+    ]
+  },
+  {
+    "id": "S13",
+    "text": "Wireless headphones with ANC under ₹1000.",
+    "budget": 1000,
+    "must_have": [
+      "wireless",
+      "active_noise_cancellation"
+    ],
+    "preferred": [],
+    "brand": null,
+    "exclude_brands": [],
+    "exclude_types": [],
+    "exclude_features": [],
+    "expected_suitable": []
+  },
+  {
+    "id": "S14",
+    "text": "Student on a tight budget: wireless headphones under 1500 with a mic.",
+    "budget": 1500,
+    "must_have": [
+      "wireless",
+      "microphone"
+    ],
+    "preferred": [],
+    "brand": null,
+    "exclude_brands": [],
+    "exclude_types": [],
+    "exclude_features": [],
+    "expected_suitable": [
+      "HP-009",
+      "HP-020",
+      "HP-031",
+      "HP-036",
+      "HP-043"
+    ]
+  },
+  {
+    "id": "S15",
+    "text": "Wireless headphones under 5000 with ANC, but no in-ear.",
+    "budget": 5000,
+    "must_have": [
+      "wireless",
+      "active_noise_cancellation"
+    ],
+    "preferred": [],
+    "exclude_types": [
+      "in_ear"
+    ],
+    "brand": null,
+    "exclude_brands": [],
+    "exclude_features": [],
+    "expected_suitable": [
+      "HP-003",
+      "HP-007",
+      "HP-033",
+      "HP-039",
+      "HP-044",
+      "HP-045"
+    ]
+  }
+]
